@@ -9,8 +9,3 @@ Este repositório tem como objetivo fornecer uma implementação prática de div
 - **Observer**: Define uma dependência um-para-muitos entre objetos, de forma que quando um objeto muda de estado, todos os seus dependentes são notificados. [EM ANDAMENTO]
 - **Factory Method**: Define uma interface para criar um objeto, mas permite que as subclasses decidam qual classe instanciar. [EM ANDAMENTO]
 - **Decorator**: Permite adicionar comportamento a um objeto dinamicamente. [EM ANDAMENTO]
-
-## Estrutura do Repositório
-
-A estrutura do repositório é a seguinte:
-
