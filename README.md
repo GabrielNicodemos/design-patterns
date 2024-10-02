@@ -7,9 +7,9 @@ Este repositório tem como objetivo fornecer uma implementação prática de div
 - **[Strategy](#strategy)**: Permite definir uma família de algoritmos, encapsulá-los e torná-los intercambiáveis.
 - **[Singleton](#singleton)**: Garante que uma classe tenha apenas uma instância e fornece um ponto de acesso global a essa instância.
 - **[Chain Responsability](#chain-of-responsibility)**: Define uma cadeia de objetos responsáveis por tratar uma solicitação.
+- **[Decorator](#decorator)**: Permite adicionar comportamento a um objeto dinamicamente. [EM ANDAMENTO]
 - **Observer**: Define uma dependência um-para-muitos entre objetos, de forma que quando um objeto muda de estado, todos os seus dependentes são notificados. [EM ANDAMENTO]
 - **Factory Method**: Define uma interface para criar um objeto, mas permite que as subclasses decidam qual classe instanciar. [EM ANDAMENTO]
-- **Decorator**: Permite adicionar comportamento a um objeto dinamicamente. [EM ANDAMENTO]
 
 ## Propósito, ganho e situações de uso de cada padrão de projeto
 
@@ -74,5 +74,19 @@ O padrão de projeto **Chain of Responsibility** (Cadeia de Responsabilidade) é
 4. **Sistemas de autorização**: Onde várias regras e níveis de permissão precisam ser aplicados para acessar certos recursos.
 5. **Tratamento de erros**: Onde diferentes tipos de erros são tratados por manipuladores diferentes.
 ---
-
+### *Decorator*
+#### Propósito
+O padrão Decorator é um padrão de design estrutural que permite adicionar funcionalidades a objetos de maneira dinâmica, sem alterar o código original da classe do objeto. Ele envolve a criação de uma série de "decoradores", que são essencialmente invólucros ao redor de objetos que modificam ou estendem seu comportamento.
+#### Ganho no uso
+1. **Extensibilidade**: Você pode adicionar ou remover funcionalidades a um objeto de forma dinâmica, sem alterar a classe original nem criar subclasses.
+2. **Flexibilidade**: Como decoradores são aplicados dinamicamente, você pode combinar várias funcionalidades ao objeto de forma modular, criando diferentes combinações de comportamento sem alterar a estrutura do código existente.
+3. **Separação de Preocupações**: Funcionalidades adicionais podem ser isoladas em diferentes classes decoradoras, mantendo o código mais organizado e fácil de manter.
+4. **Reuso de Código**: Ao evitar subclasses para cada variação de comportamento, o código dos decoradores pode ser reutilizado com diferentes objetos.
+5. **Evita Subclasse Explosiva**: Sem o decorador, para cada combinação possível de comportamentos, seria necessário criar uma nova subclasse, resultando em um grande número de subclasses. O Decorator evita esse crescimento descontrolado.
+#### Situações de uso
+1. **Adicionar Comportamentos Dinâmicos**: Quando você precisa adicionar funcionalidades a objetos em tempo de execução, como diferentes formas de notificação (e-mail, SMS, push notifications).
+2. **Modificar Comportamentos de Objetos**: Quando há necessidade de modificar o comportamento de um objeto sem alterar a sua classe base, como adicionar log, autenticação, ou compressão a uma classe de processamento de dados.
+3. **Evitar Múltiplas Subclasses**: Quando a criação de várias subclasses para diferentes combinações de comportamento geraria complexidade desnecessária. Por exemplo, em um sistema de envio de pedidos onde você quer aplicar descontos de forma condicional e flexível.
+4. **Imitação de Funções Adicionais**: Quando objetos compartilham uma interface comum, mas precisam de variações sutis de comportamento. Por exemplo, sistemas de streaming de música, onde pode-se aplicar diferentes filtros de áudio.
+---
 Author: Gabriel Eduardo C. Nicodemos
