@@ -8,6 +8,7 @@ Este repositório tem como objetivo fornecer uma implementação prática de div
 - **[Singleton](#singleton)**: Garante que uma classe tenha apenas uma instância e fornece um ponto de acesso global a essa instância.
 - **[Chain Responsability](#chain-of-responsibility)**: Define uma cadeia de objetos responsáveis por tratar uma solicitação.
 - **[Decorator](#decorator)**: Permite adicionar comportamento a um objeto dinamicamente. [EM ANDAMENTO]
+- **[Adapter](#adapter)**: O Adapter converte a interface de uma classe em outra interface que o cliente espera. Ele permite que classes com interfaces incompatíveis trabalhem juntas.
 - **Observer**: Define uma dependência um-para-muitos entre objetos, de forma que quando um objeto muda de estado, todos os seus dependentes são notificados. [EM ANDAMENTO]
 - **Factory Method**: Define uma interface para criar um objeto, mas permite que as subclasses decidam qual classe instanciar. [EM ANDAMENTO]
 
@@ -88,5 +89,20 @@ O padrão Decorator é um padrão de design estrutural que permite adicionar fun
 2. **Modificar Comportamentos de Objetos**: Quando há necessidade de modificar o comportamento de um objeto sem alterar a sua classe base, como adicionar log, autenticação, ou compressão a uma classe de processamento de dados.
 3. **Evitar Múltiplas Subclasses**: Quando a criação de várias subclasses para diferentes combinações de comportamento geraria complexidade desnecessária. Por exemplo, em um sistema de envio de pedidos onde você quer aplicar descontos de forma condicional e flexível.
 4. **Imitação de Funções Adicionais**: Quando objetos compartilham uma interface comum, mas precisam de variações sutis de comportamento. Por exemplo, sistemas de streaming de música, onde pode-se aplicar diferentes filtros de áudio.
+---
+### *Adapter*
+#### Propósito
+O padrão Adapter é um padrão de design estrutural que permite que interfaces incompatíveis trabalhem juntas, convertendo a interface de uma classe existente em outra interface que o cliente espera. O Adapter age como um intermediário, adaptando uma classe ou sistema existente para uma nova interface sem modificar seu código original.
+#### Ganho no uso
+1. **Compatibilidade**: O **Adapter** permite que componentes de software que não foram projetados para trabalhar juntos possam interagir, adaptando a interface de um componente para que ele possa ser usado por outro.
+2. **Reuso de Código Existente**: O **Adapter** facilita o reaproveitamento de código existente que não pode ser alterado diretamente (por exemplo, classes de bibliotecas externas) ao fornecer uma interface compatível com o sistema atual.
+3. **Flexibilidade**: Permite adaptar diferentes sistemas ou classes sem a necessidade de modificações complexas ou criação de novas classes, mantendo a estrutura original intacta.
+4. **Isolamento de Mudanças**: Você pode introduzir mudanças em um sistema externo ou legado sem precisar alterar as interfaces ou o código que já depende dele. Isso é especialmente útil em projetos com componentes antigos.
+5. **Facilita Integração de Sistemas Legados**: É ideal para integrar sistemas antigos com novas soluções sem reescrever o código legado.
+#### Situações de uso
+1. **Integração com Sistemas Legados**: Quando você precisa usar uma classe de um sistema legado (ou uma biblioteca de terceiros) em um novo sistema que espera uma interface diferente. O **Adapter** converte a interface antiga para a nova interface sem a necessidade de alterar o código legado.
+2. **Compatibilidade entre APIs**: Quando você está migrando para uma nova API e quer adaptar a nova API para funcionar com código antigo. O **Adapter** pode mapear os métodos da nova API para os métodos esperados pelo cliente antigo.
+3. **Sistemas de Terceiros**: Quando você precisa integrar sistemas de fornecedores externos que têm interfaces diferentes das que o seu sistema utiliza. O **Adapter** ajusta a interface fornecida pelo sistema externo para se adequar ao que você precisa.
+4. **Interfaces Incompatíveis**: Se você tem duas classes com interfaces diferentes que precisam trabalhar juntas (por exemplo, uma classe antiga que usa métodos diferentes das novas), o **Adapter** pode harmonizar as duas.
 ---
 Author: Gabriel Eduardo C. Nicodemos
